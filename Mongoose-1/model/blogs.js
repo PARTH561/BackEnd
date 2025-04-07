@@ -1,15 +1,16 @@
-const = require("mongoose");
+const mongoose =require("mongoose");
 
-let blogsSchema = new mongoose.Schema({
-    title: String,
-    content: {
+const blogSchema= new mongoose.Schema({
+    title:String,
+    content:String,
+    author:{
         type: String,
-        required: true
+        require:true
     },
-    author: String,
-    date: {
-        type: Date,
-        default: Date.now
+    data:{
+        type:Date,
+        default: Date.now()
     }
 })
-module.exports = mongoose.model("Blog", blogsShema);
+
+module.exports=mongoose.model("Blog",blogSchema);
